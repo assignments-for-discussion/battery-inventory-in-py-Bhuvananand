@@ -18,7 +18,7 @@ def count_batteries_by_health(present_capacities):
     elif SoH < 63 and SoH >= 0:
       battery_count["failed"] += 1
     else:
-      print('Invalid value of SoH for battery with capacity', capacity) #Error message for SoH values above 100 or below 0
+      print('Invalid value of SoH for battery with capacity', capacity) #Error message for batteries with SoH values above 100 or below 0
       
   return battery_count
   
