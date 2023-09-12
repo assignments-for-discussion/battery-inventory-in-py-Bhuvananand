@@ -1,9 +1,18 @@
 
 def count_batteries_by_health(present_capacities):
   rated_capacity = 120
-  SoH_percent = []
-  for i in present_capacities:
-    SoH = 100 * 
+  for capacity in present_capacities:
+    SoH = 100 * capacity / rated_capacity
+
+    battery_count = {}
+    if SoH >= 80:
+      SoH_dict['healthy'] += 1
+    elif SoH >=63 and SoH < 80:
+      SoH_dict['exchange'] += 1
+    elif SoH <63:
+      SoH_dict['failed'] += 1
+      
+  return SoH_dict
   return {
     "healthy": 0,
     "exchange": 0,
